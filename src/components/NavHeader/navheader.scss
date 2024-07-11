@@ -1,17 +1,11 @@
 .custom-header {
     position: relative;
     width: 100%;
-    height: 100vh;
-    background: url('https://via.placeholder.com/1500') no-repeat center center/cover;
-    background-size: cover;
-    background-blend-mode: overlay;
-    transition: background 0.3s ease;
-    background-color: var(--bg-color, rgba(0, 0, 0, 0));
+    height: 85vh;
 
     .navbar {
         position: fixed;
         width: 100%;
-        background: rgba(255, 255, 255, 0.8);
         z-index: 10;
     }
 
@@ -46,4 +40,19 @@
         font-size: 2em;
         font-family: 'Maru-Light';
     }
+}
+
+.accordion {
+    font-family: 'Maru-Light';
+}
+
+button {
+    margin-bottom: 10px !important;
+    margin-top: 10px !important;
+}
+
+
+.ui-word {
+    font-family: 'Maru-LightItalic';
+    color: grey;
 }

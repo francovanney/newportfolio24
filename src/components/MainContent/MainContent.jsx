@@ -1,10 +1,14 @@
 import React from "react";
 import "./MainContent.scss";
+import { Separator } from "../ui/separator";
 
 const MainContent = () => {
   return (
     <div className="main-content">
-      <section className="section animateIn">
+      <div className="separator">
+        <Separator />
+      </div>
+      <section className="section animateIn" id="section-1">
         <h2>Our Products</h2>
         <p>Explore our range of products designed to meet your needs.</p>
       </section>

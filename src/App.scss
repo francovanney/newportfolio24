@@ -52,3 +52,33 @@
   animation-timeline: view();
   animation-range: entry 0% cover 40%;
 }
+
+
+
+:root {
+  --bg-opacity: 0;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  background-image: url('https://pangrampangram.com/cdn/shop/files/PPNikkeiWebsiteCover_07b.jpg?v=1711458852');
+  background-size: 100vw 100vh;
+  /* Ajusta el tamaño: 100% del ancho y 80% de la altura del viewport */
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+  transition: background 0.3s ease;
+  background-color: var(--bg-color, rgba(0, 0, 0, 0));
+}
+
+
+
+body {
+  background-color: rgba(0, 0, 0, var(--bg-opacity)) !important;
+  transition: background-color 0.5s ease;
+}
+
+.separator {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}

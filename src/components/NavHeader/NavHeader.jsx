@@ -1,19 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { Navbar, Nav, Container } from "react-bootstrap";
+import { Nav, Container } from "react-bootstrap";
 import "./navheader.scss";
+import { Separator } from "../ui/separator";
 
 const NavHeader = () => {
-  const [scrollPosition, setScrollPosition] = useState(0);
+  const [opacity, setOpacity] = useState(0);
 
   const handleScroll = () => {
     const position = window.pageYOffset;
-    setScrollPosition(position);
-
-    const opacity = Math.min(position / 1600, 1);
-    document.documentElement.style.setProperty(
-      "--bg-color",
-      `rgba(0, 0, 0, ${opacity})`
-    );
+    const maxScroll = window.innerHeight * 0.85; // Ajusta este valor según necesites
+    const newOpacity = Math.min(position / maxScroll, 1);
+    setOpacity(newOpacity);
   };
 
   useEffect(() => {
@@ -25,16 +22,6 @@ const NavHeader = () => {
 
   return (
     <header className="custom-header">
-      <Navbar expand="lg" className="navbar fixed-top bg-light">
-        <Navbar.Brand href="#">Brand</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ml-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
       <Container
         fluid
         className="header-content d-flex align-items-center w-100"
@@ -44,12 +31,16 @@ const NavHeader = () => {
             <h1 className="display-1">
               Franco <br /> Vanney
             </h1>
-            <p className="position">UI Developer</p>
+            <p className="position">
+              FE/<span className="ui-word">UI</span> Developer
+            </p>
           </div>
           <Nav className="w-lg-25 w-100 d-flex flex-column">
-            <hr />
-            <Nav.Link href="#section1">Section 1</Nav.Link>
+            <Separator />
+            <Nav.Link href="#section-1">Section 1</Nav.Link>
+            <Separator />
             <Nav.Link href="#section2">Section 2</Nav.Link>
+            <Separator />
             <Nav.Link href="#section3">Section 3</Nav.Link>
           </Nav>
         </Container>
